@@ -1,0 +1,20 @@
+=======================================================================================================================
+
+Herstellerlinks
+https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html#eb-overview
+https://www.analog.com/en/technical-articles/how-to-create-an-oscilloscope-using-python-and-adalm2000.html
+https://wiki.analog.com/university/tools/m2k/libm2k/libm2k#building_bindings
+https://github.com/analogdevicesinc/libm2k
+
+=======================================================================================================================
+
+Beispiele
+https://github.com/analogdevicesinc/libm2k/tree/master/bindings/python/examples
+
+=======================================================================================================================
+
+Python Installation der ADALM2000 Treiber
+1. https://github.com/analogdevicesinc/libm2k/releases/   => libm2k-x.y.z-Windows-setup.exe
+2. pip install --upgrade -i https://test.pypi.org/simple/ libm2k
+
+=======================================================================================================================
