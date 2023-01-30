@@ -23,4 +23,5 @@ for i in range(0, 4, 1):
             rgb.rgb_matrix[row][col] = color
     rgb.write()
     time.sleep(0.5)
+
 rgb.close()
