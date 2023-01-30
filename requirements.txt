@@ -1,5 +1,5 @@
 pyserial >= 3.5
 pytest >= 7.2.1
 twine >= 4.0.2
-
+Pillow >= 9.3
 
