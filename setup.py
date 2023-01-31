@@ -12,7 +12,7 @@ setup(
     author='Pascal Helfenstein',
     author_email='pascal.helfenstien@abbts.ch',
     # scripts=['bin/script1','bin/script2'],
-    url='https://abbts.ch',
+    url='https://github.com/p-d-h/abbts_blp',
     license='LICENSE.txt',
     description='abbts_blp',
     long_description=long_description,
