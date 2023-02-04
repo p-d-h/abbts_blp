@@ -36,7 +36,8 @@ extensions = ['sphinx.ext.duration',
               'sphinx.ext.autodoc',
               'sphinx.ext.coverage',
               'sphinx_rtd_theme',
-              'sphinx.ext.napoleon']
+              'sphinx.ext.napoleon',
+              'sphinx_execute_code',]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build',

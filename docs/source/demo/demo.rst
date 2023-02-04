@@ -1,6 +1,17 @@
 Demo
 ====
 
+Codeausführung
+--------------
+https://github.com/jpsenior/sphinx-execute-code
+
+.. execute_code::
+    :hide_headers:
+
+    import numpy as np
+    print (f'pi = {np.pi:04f}')
+
+
 Section
 -------
 
@@ -25,10 +36,20 @@ sdfsdf
    A bit of **rst** which should be *highlighted* properly.
 
 
-.. image:: affe.webp
+.. code-block::
+   :caption: main.py
+
+   if __name__ == "__main__":
+    print('Hello World')
+
+.. image:: img/affe.webp
 	:scale: 50 %
 
+
+
+
 ..
+  https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html
   https://www.sphinx-doc.org/en/master/tutorial/automatic-doc-generation.html#
   https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html#directive-autosummary
   https://sphinx-tutorial.readthedocs.io/step-2/
