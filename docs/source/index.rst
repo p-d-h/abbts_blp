@@ -14,4 +14,7 @@ Moduldokumentation abbts-blp
    demo/demo
    Moduldokumentation abbts-blp <abbts_blp/abbts_blp>
 
+HTML Renderer
+
+https://raw.githack.com/p-d-h/abbts_blp/main/docs/build/html/index.html
 
