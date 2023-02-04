@@ -1,6 +1,12 @@
 Demo
 ====
 
+.. toctree::
+   :maxdepth: 3
+
+   python_jinja
+
+
 Codeausführung
 --------------
 https://github.com/jpsenior/sphinx-execute-code

@@ -1,0 +1,6 @@
+Jinja Template
+==============
+
+Automatische Generierung der Dokumentation mit Platzhaltern
+
+{{ name }}!

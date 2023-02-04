@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # sys.path.insert(0, file_path)
 
 project = 'abbts-blp'
-copyright = '2023, Pascal Helfenstein'
+copyright = '2023, Pascal Helfenstein, Thomas Ruoss'
 author = 'Pascal Helfenstein'
 release = abbts_blp.__VERSION__
 
@@ -48,7 +48,6 @@ language = 'de'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 

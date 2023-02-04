@@ -7,11 +7,11 @@ Moduldokumentation abbts-blp
 ============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Inhaltsverzeichnis:
 
    installation/installation
    demo/demo
-   abbts_blp/abbts_blp
+   Moduldokumentation abbts-blp <abbts_blp/abbts_blp>
 
 
