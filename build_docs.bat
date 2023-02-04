@@ -1,5 +1,7 @@
 REM HTML Renderer
-REM https://raw.githack.com/p-d-h/abbts_blp/main/docs/build/html/index.html
+REM githack.com
+REM https://raw.githubusercontent.com/p-d-h/abbts_blp/main/docs/build/html/index.html
+REM DEV https://raw.githack.com/p-d-h/abbts_blp/main/docs/build/html/index.html
 
 REM rmdir docs\build /S /Q
 
