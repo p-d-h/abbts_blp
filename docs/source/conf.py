@@ -49,5 +49,9 @@ language = 'de'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 html_theme = 'sphinx_rtd_theme'
+
+# https://stackoverflow.com/questions/31951553/customizing-sphinx-to-avoid-generating-search-box
+templates_path = ['templates']
+
 html_static_path = ['_static']
 
