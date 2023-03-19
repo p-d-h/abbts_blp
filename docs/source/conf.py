@@ -53,5 +53,9 @@ html_theme = 'sphinx_rtd_theme'
 # https://stackoverflow.com/questions/31951553/customizing-sphinx-to-avoid-generating-search-box
 templates_path = ['templates']
 
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_show_sphinx
+html_show_sphinx = False
+html_show_copyright = True
+
 html_static_path = ['_static']
 
