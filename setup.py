@@ -10,7 +10,7 @@ setup(
     name='abbts_blp',
     version=abbts_blp.__VERSION__,
     author='Pascal Helfenstein',
-    author_email='pascal.helfenstien@abbts.ch',
+    author_email='pascal.helfenstein@abbts.ch',
     # scripts=['bin/script1','bin/script2'],
     url='https://github.com/p-d-h/abbts_blp',
     license='LICENSE.txt',

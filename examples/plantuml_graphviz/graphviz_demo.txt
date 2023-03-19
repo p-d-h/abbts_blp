@@ -1,0 +1,11 @@
+digraph G{
+  rankdir=LR
+  node1 [shape=box, label="bbbb"]
+  node11 [shape=box, label="bbbsadfb"]
+  node2 [shape=diamond]
+  node3 [shape=record, label="{ a | {c|abc} | c }"]
+
+  node1 -> node2 [label="bbbb"]
+  node11 -> node2 [label="bbbb"]
+  node2 -> node3 [label="bbbb"]
+}
