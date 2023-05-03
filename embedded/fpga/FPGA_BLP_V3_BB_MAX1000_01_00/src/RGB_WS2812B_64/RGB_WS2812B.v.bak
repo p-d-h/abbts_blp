@@ -1,0 +1,192 @@
+// Memory:  Auto RAM Replacement Option
+// http://quartushelp.altera.com/15.0/mergedProjects/hdl/vlog/vlog_pro_ram_inferred.htm
+// http://quartushelp.altera.com/15.0/mergedProjects/hdl/vlog/vlog_file_dir_ram.htm
+///////////////////////////////////////////////////////////////////////////////
+module RGB_WS2812B_150( 
+	input CLK,
+	input [0:239] RGB_DATA_00,
+	input [0:239] RGB_DATA_01,
+	input [0:239] RGB_DATA_02,
+	input [0:239] RGB_DATA_03,
+	input [0:239] RGB_DATA_04,
+	input [0:239] RGB_DATA_05,
+	input [0:239] RGB_DATA_06,
+	input [0:239] RGB_DATA_07,
+	input [0:239] RGB_DATA_08,
+	input [0:239] RGB_DATA_09,
+	input [0:239] RGB_DATA_10,
+	input [0:239] RGB_DATA_11,
+	input [0:239] RGB_DATA_12,
+	input [0:239] RGB_DATA_13,
+	input [0:239] RGB_DATA_14,	
+	output reg OUT
+	);
+	//
+	reg	[0:3600] data;// 150 LED zu 24 Bit => 3600
+	reg	[15:0] i;
+	reg	[15:0] ctr;
+	reg	[15:0] state;
+	//
+	initial
+	begin
+		OUT <= 0;
+		//data <= 0;
+		i <= 0;
+		ctr <= 1;
+		state <= 0;
+	end
+	//
+	always @(posedge CLK)
+	begin
+	if (state == 0) 
+		begin
+		ctr <= ctr + 1;
+		OUT <= 0;
+		//
+		data[0000:0239] <= RGB_DATA_00[0:239];
+		data[0240:0479] <= RGB_DATA_01[0:239];
+		data[0480:0719] <= RGB_DATA_02[0:239];
+		data[0720:0959] <= RGB_DATA_03[0:239];
+		data[0960:1199] <= RGB_DATA_04[0:239];
+		data[1200:1439] <= RGB_DATA_05[0:239];
+		data[1440:1679] <= RGB_DATA_06[0:239];	
+		data[1680:1919] <= RGB_DATA_07[0:239];
+		data[1920:2159] <= RGB_DATA_08[0:239];
+		data[2160:2399] <= RGB_DATA_09[0:239];
+		data[2400:2639] <= RGB_DATA_10[0:239];
+		data[2640:2879] <= RGB_DATA_11[0:239];
+		data[2880:3119] <= RGB_DATA_12[0:239];
+		data[3120:3359] <= RGB_DATA_13[0:239];	
+		data[3360:3599] <= RGB_DATA_14[0:239];
+		data[3600] <= 0;
+		//
+		if (ctr == 3000) 
+			begin
+			state <= 1;
+			ctr <= 1;
+			i <= 0;
+			end
+		end
+		//
+	if (state == 1) 
+		begin
+		if (i == 3600) 
+			begin
+			state <= 0;
+			ctr <= 1;
+			i <= 0;
+			end
+		//
+		ctr <= ctr + 1;
+		if (ctr == 63) 
+			begin
+			ctr <= 1;
+			i <= i + 1;
+			end	
+		//
+		if (i < 3600)
+			begin
+			if (data[i] == 1) 
+				begin
+				//
+				if (ctr <= 43)
+					OUT <= 1;
+				else
+					OUT <= 0;
+				//
+				end
+			else
+				begin
+				//
+				if (ctr <= 20)
+					OUT <= 1;
+				else
+					OUT <= 0;
+				//
+				end
+			end
+		end
+	end
+endmodule
+///////////////////////////////////////////////////////////////////////////////
+module RGB_WS2812B_20( 
+	input CLK,
+	input [0:239] RGB_DATA_00,
+	input [0:239] RGB_DATA_01,
+	output reg OUT
+	);
+	//
+	reg	[0:480] data;// 20 LED zu 24 Bit
+	reg	[15:0] i;
+	reg	[15:0] ctr;
+	reg	[15:0] state;
+	//
+	initial
+	begin
+		OUT <= 0;
+		data <= 0;
+		i <= 0;
+		ctr <= 1;
+		state <= 0;
+	end
+	//
+	always @(posedge CLK)
+	begin
+	if (state == 0) 
+		begin
+		ctr <= ctr + 1;
+		OUT <= 0;
+		//
+		data[0000:0239] <= RGB_DATA_00[0:239];
+		data[0240:0479] <= RGB_DATA_01[0:239];
+		data[480] <= 0;
+		//
+		if (ctr == 3000) 
+			begin
+			state <= 1;
+			ctr <= 1;
+			i <= 0;
+			end
+		end
+		//
+	if (state == 1) 
+		begin
+		if (i == 480) 
+			begin
+			state <= 0;
+			ctr <= 1;
+			i <= 0;
+			end
+		//
+		ctr <= ctr + 1;
+		if (ctr == 63) 
+			begin
+			ctr <= 1;
+			i <= i + 1;
+			end	
+		//
+		if (i < 480)
+			begin
+			if (data[i] == 1) 
+				begin
+				//
+				if (ctr <= 43)
+					OUT <= 1;
+				else
+					OUT <= 0;
+				//
+				end
+			else
+				begin
+				//
+				if (ctr <= 20)
+					OUT <= 1;
+				else
+					OUT <= 0;
+				//
+				end
+			end
+		end
+	end
+endmodule
+///////////////////////////////////////////////////////////////////////////////

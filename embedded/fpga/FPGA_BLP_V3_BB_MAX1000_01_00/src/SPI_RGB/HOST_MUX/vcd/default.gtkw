@@ -1,0 +1,57 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed May 04 11:25:06 2022
+[*]
+[dumpfile] "E:\ABB Technikerschule\BLP_V3 - Entwicklung\200_Software\FPGA\FPGA_BLP_V3_MAX1000_00_05\src\SPI_RGB\HOST_MUX\vcd\icarus_tb.vcd"
+[dumpfile_mtime] "Wed May 04 10:57:06 2022"
+[dumpfile_size] 2304
+[savefile] "E:\ABB Technikerschule\BLP_V3 - Entwicklung\200_Software\FPGA\FPGA_BLP_V3_MAX1000_00_05\src\SPI_RGB\HOST_MUX\vcd\default.gtkw"
+[timestart] 0
+[size] 1480 2068
+[pos] -1 -1
+*-7.143737 62 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] ICARUS_TB.
+[sst_width] 277
+[signals_width] 286
+[sst_expanded] 1
+[sst_vpaned_height] 272
+@28
+ICARUS_TB.clk
+ICARUS_TB.clk_1kHz
+@200
+-
+@22
+ICARUS_TB.data_1[255:0]
+@28
+ICARUS_TB.data_write_copy_1
+@22
+ICARUS_TB.bank_1[7:0]
+@200
+-
+@22
+ICARUS_TB.data_2[255:0]
+@28
+ICARUS_TB.data_write_copy_2
+@22
+ICARUS_TB.bank_2[7:0]
+@200
+-
+@22
+ICARUS_TB.data[255:0]
+@28
+ICARUS_TB.data_write_copy
+@22
+ICARUS_TB.bank[7:0]
+@200
+-
+@28
+ICARUS_TB.host_mux.copy_1_re
+ICARUS_TB.host_mux.copy_1_fe
+ICARUS_TB.host_mux.copy_2_re
+ICARUS_TB.host_mux.copy_2_fe
+@200
+-
+@25
+ICARUS_TB.host_mux.counter[15:0]
+[pattern_trace] 1
+[pattern_trace] 0

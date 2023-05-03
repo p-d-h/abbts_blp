@@ -1,0 +1,272 @@
+module RGB( 
+	input SYS_CLK,
+	output reg OUT
+	);
+	//
+	reg	[71:0] data;
+	reg	[15:0] i;
+	reg	[15:0] ctr;
+	reg	[15:0] state;
+	//
+	initial
+	begin
+		OUT <= 0;
+		data <= 0;
+		i <= 0;
+		ctr <= 0;
+		state <= 0;
+	end
+	//
+	always	@(posedge SYS_CLK)
+	begin
+		// RESET
+		if (state == 0) begin
+			ctr <= ctr + 1;
+			OUT <= 0;
+			if (ctr == 2400) begin
+				state <= 1;
+				ctr <= 0;
+				i <= 0;
+			end
+		end
+		//
+		if (state == 1) begin
+			if (i == 72) begin
+				state <= 0;
+				ctr <= 0;
+				i <= 0;
+			end
+			//
+			ctr <= ctr + 1;
+			if (ctr == (65 - 1)) begin
+				ctr <= 0;
+				i <= i + 1;
+			end
+			//
+			if (data[i]) begin
+				if (ctr < 17) begin
+					OUT <= 1;
+				end else begin
+					OUT <= 0;
+				end
+			end else begin
+				if (ctr < 17) begin
+					OUT <= 0;
+				end else begin
+					OUT <= 1;
+				end
+			end
+		end
+	end
+endmodule
+
+
+
+
+
+
+
+
+//
+//	Daten seriell von LED1 bis LED7 (LED1 first)
+//	Serial Date Frequenz ca. 800kHz
+//	Refresh	==>
+//	DATA Format
+//	_     __
+//	 |___|  |	DATA BIT 0 => 0 PEGEL 850 ns, 1 Pegel 400ns
+// Programmierung: 0 Pegel = 880 ns = 44 Zyklen, 1 Pegel 440 ns = 22 Zyklen
+//	__    ___
+//	  |__|   |	DATA BIT 1 => 0 PEGEL 450 ns, 1 Pegel 800ns
+//	Programmierung: 0 Pegel = 480 ns = 24 Zyklen, 1 Pegel = 840 ns = 42 Zyklen
+//
+//	Bei RESET am Ende der �bertragung auf 0
+//	Nach dem Reset beim RESTART wieder mit 1 beginnen
+//
+//	DATA FORMAT
+//	G			R			B
+//	G7 G6 G5 G4 G3 G2 G1 G0 R7 R6 R5 R4 R3 R2 R1 R0 B7 B6 B5 B4 B3 B2 B1 B0
+//	left shift G7 first
+//
+
+/*
+module	RGB_LED (SYS_CLOCK50MHz, START_STORE, START_REFRESH,
+			RED_LED1, GREEN_LED1, BLUE_LED1, RED_LED2, GREEN_LED2, BLUE_LED2,
+			RED_LED3, GREEN_LED3, BLUE_LED3, SERIAL_OUT, HOLD_SEND, OUT_DATA,
+			SERIAL_COUNTER, HIGH_COUNTER, LOW_COUNTER, START_INTERN, NEW_SEND_BIT,
+			START_HOLD_INTERN, WAIT_COUNTER_HOLD);
+//
+input	SYS_CLOCK50MHz;
+input	START_STORE;
+input	START_REFRESH;
+input	[7:0] RED_LED1;
+input	[7:0] GREEN_LED1;
+input	[7:0] BLUE_LED1;
+input	[7:0] RED_LED2;
+input	[7:0] GREEN_LED2;
+input	[7:0] BLUE_LED2;
+input	[7:0] RED_LED3;
+input	[7:0] GREEN_LED3;
+input	[7:0] BLUE_LED3;
+//
+output	SERIAL_OUT;
+output	HOLD_SEND;
+output	OUT_DATA;
+output	[9:0] SERIAL_COUNTER;
+output	[5:0] HIGH_COUNTER;
+output	[5:0] LOW_COUNTER;
+output	START_INTERN;
+output	NEW_SEND_BIT;
+output	START_HOLD_INTERN;
+output	WAIT_COUNTER_HOLD;
+//
+//	 
+reg	[71:0] SEND_DATA;	 
+reg	SERIAL_OUT;
+reg	HOLD_SEND;
+reg	OUT_DATA;
+reg	[9:0] SERIAL_COUNTER;
+reg	[5:0] HIGH_COUNTER;
+reg	[5:0] LOW_COUNTER;
+reg	START_INTERN;
+reg	NEW_SEND_BIT;
+reg	HOLD_SEND_BIT;
+reg	[15:0] WAIT_RESET_COUNTER;	// 2500 f�r 50us
+reg	WAIT_COUNT_HOLD;
+//	 
+reg	ST1;
+reg	ST2;
+reg	ST3;
+reg	ST4;
+reg	ST5;
+reg	ST6;
+reg	ST7;	
+reg	ST8;
+reg	ST9;
+reg	ST10;	 
+//
+initial
+	begin
+		SEND_DATA <= 1;
+		SERIAL_OUT <= 1;
+		START_INTERN <= 0;
+		HOLD_SEND <= 0;
+		OUT_DATA <= 0;
+		SERIAL_COUNTER <= 0;
+		HIGH_COUNTER <= 0;
+		LOW_COUNTER <= 0;
+		NEW_SEND_BIT <= 0;
+		WAIT_RESET_COUNTER <= 0;
+		HOLD_SEND_BIT <= 0;
+		WAIT_COUNT_HOLD <= 0;
+	end
+//
+assign	START_STORE_SEND = (ST1 && !ST2);
+assign	START_REFRESH_SEND = (ST3 && !ST4);	
+assign	START_HOLD_INTERN = (ST5 && ! ST6);
+	
+always	@(posedge SYS_CLOCK50MHz)
+begin
+	ST1 <= START_STORE;
+	ST2 <= ST1;
+//
+	ST3 <= START_REFRESH;
+	ST4 <= ST3;
+//
+	ST5 <= START_INTERN;
+	ST6 <= ST5;
+//	
+//		
+	if(START_STORE_SEND)
+	begin
+		SEND_DATA[71:64] <= GREEN_LED1 [7:0];
+		SEND_DATA [63:56] <= RED_LED1 [7:0];
+		SEND_DATA [55:48] <= BLUE_LED1 [7:0];
+		SEND_DATA[47:40] <= GREEN_LED2[7:0];
+		SEND_DATA [39:32] <= RED_LED2 [7:0];
+		SEND_DATA [31:24] <= BLUE_LED2 [7:0];
+		SEND_DATA[23:16] <= GREEN_LED3 [7:0];
+		SEND_DATA [15:8] <= RED_LED3 [7:0];
+		SEND_DATA [7:0] <= BLUE_LED3 [7:0];
+		START_INTERN <= 1;
+	end
+//
+	if (START_HOLD_INTERN)
+	begin
+		HOLD_SEND <= 1;
+		SERIAL_COUNTER <= 71;
+		NEW_SEND_BIT <= 1;
+		ST8 <= 0;
+		START_INTERN <= 0;
+	end
+//
+	if (HOLD_SEND)
+	begin
+		if (!SEND_DATA)
+		begin
+			HOLD_SEND <= 0;
+		end
+		if (NEW_SEND_BIT)
+		begin
+			OUT_DATA <= (SEND_DATA[SERIAL_COUNTER]);
+			SERIAL_COUNTER <= SERIAL_COUNTER -1;
+			NEW_SEND_BIT <= 0;
+			ST8 <= 1;
+			if (OUT_DATA)
+			begin
+				HIGH_COUNTER <= 42;
+				LOW_COUNTER <= 24;
+			end
+			if (!OUT_DATA)
+			begin
+				HIGH_COUNTER <= 22;
+				LOW_COUNTER <= 44;
+			end
+		end
+		if (ST8)
+		begin	
+			HOLD_SEND_BIT <= 1;	
+			ST8 <= 0;
+		end
+		if (HOLD_SEND_BIT)
+		begin
+			if(HIGH_COUNTER !=0)
+			begin
+				SERIAL_OUT <= 1;
+				HIGH_COUNTER <= HIGH_COUNTER -1;
+			end
+			if (!HIGH_COUNTER)
+			begin
+				if(LOW_COUNTER !=0)
+				begin
+					SERIAL_OUT <= 0;
+					LOW_COUNTER <= LOW_COUNTER - 1;
+				end
+			end
+			if (!LOW_COUNTER)
+			begin
+				if (SERIAL_COUNTER != 0)
+				begin
+					SERIAL_OUT <= 0;
+					HOLD_SEND_BIT <= 0;
+					NEW_SEND_BIT <= 1;
+				end
+				if (SERIAL_COUNTER == 0)
+				begin
+					WAIT_COUNT_HOLD <= 1;
+					WAIT_RESET_COUNTER <= 2500;
+				end
+			end
+		end	
+	end
+	if (WAIT_COUNT_HOLD)
+	begin
+		WAIT_RESET_COUNTER <= WAIT_RESET_COUNTER - 1;
+	end
+	if (WAIT_COUNT_HOLD && !WAIT_RESET_COUNTER)
+	begin
+		WAIT_COUNT_HOLD <= 0;
+		START_INTERN <= 1;
+	end
+end
+endmodule
+*/

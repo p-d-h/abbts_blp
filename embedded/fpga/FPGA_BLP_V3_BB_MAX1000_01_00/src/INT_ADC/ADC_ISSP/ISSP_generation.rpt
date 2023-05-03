@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\test\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\ISSP.qsys --block-symbol-file --output-directory=D:\test\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\src\INT_ADC\ADC_ISSP --family="MAX 10" --part=10M08SAU169C8G
+Progress: Loading FPGA_MODUL_MAX1000_DEMO_SPI_01_00/ISSP.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 17.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\test\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\ISSP.qsys --synthesis=VERILOG --output-directory=D:\test\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\src\INT_ADC\ADC_ISSP\synthesis --family="MAX 10" --part=10M08SAU169C8G
+Progress: Loading FPGA_MODUL_MAX1000_DEMO_SPI_01_00/ISSP.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 17.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ISSP: Generating ISSP "ISSP" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "ISSP" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: ISSP: Done "ISSP" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

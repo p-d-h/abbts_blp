@@ -1,0 +1,57 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+module DELAY( 
+	input CLK,
+	input CLK_1kHz,
+	input IN,
+	output reg OUT
+	);
+	localparam time_delay = 500;// ms
+		//
+	reg [15:0] counter;
+	//
+	reg		st1;
+	reg		st2;
+	reg		st3;
+	reg		st4;
+	//
+	wire 	clkImp1kHz;
+	//wire 	clkImp1Hz_n;
+	wire 	inImp;
+	//wire 	clkImpUc_n;	
+	//
+	assign	clkImp1kHz = (st1 && !st2);
+	//assign	clkImp1Hz_n = (!st1 && st2);
+	assign	inImp = (st3 && !st4);
+	//assign	clkImpUc_n = (!st3 && st4);
+	//
+	initial
+	begin
+		counter <= 0;
+		OUT <= 1;
+	end
+	//
+	always	@(posedge CLK)
+	begin
+		st1 <= CLK_1kHz;
+		st2 <= st1;	
+		st3 <= IN;
+		st4 <= st3;	
+		//
+		if (clkImp1kHz) begin
+			if (counter > 0) 
+			begin
+				counter <= counter - 1;
+			end
+		end
+		//
+		if (inImp)
+		begin
+			counter <= time_delay;
+		end
+		//
+		if (counter == 0) OUT <= 1;
+		else OUT <= 0;
+	
+	end
+endmodule
+////////////////////////////////////////////////////////////////////////////////////////////

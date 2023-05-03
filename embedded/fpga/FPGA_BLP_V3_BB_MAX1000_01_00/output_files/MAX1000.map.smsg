@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at SPI_RASPBERRY.v(152): always construct contains both blocking and non-blocking assignments File: E:/ABB Technikerschule/BLP_V3 - Entwicklung/200_Software/FPGA/FPGA_BLP_V3_BB_MAX1000_00_01/src/SPI/SPI_RASPBERRY/SPI_RASPBERRY.v Line: 152
+Warning (10268): Verilog HDL information at SPI_TEENSY.v(137): always construct contains both blocking and non-blocking assignments File: E:/ABB Technikerschule/BLP_V3 - Entwicklung/200_Software/FPGA/FPGA_BLP_V3_BB_MAX1000_00_01/src/SPI/SPI_TEENSY/SPI_TEENSY.v Line: 137

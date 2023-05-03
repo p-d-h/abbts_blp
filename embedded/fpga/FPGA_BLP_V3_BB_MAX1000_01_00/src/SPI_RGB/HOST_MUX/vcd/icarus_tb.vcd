@@ -1,0 +1,250 @@
+$date
+	Wed May 04 12:57:06 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module ICARUS_TB $end
+$var wire 1 ! data_write_copy $end
+$var wire 256 " data [255:0] $end
+$var wire 8 # bank [7:0] $end
+$var reg 8 $ bank_1 [7:0] $end
+$var reg 8 % bank_2 [7:0] $end
+$var reg 1 & clk $end
+$var reg 1 ' clk_1kHz $end
+$var reg 256 ( data_1 [255:0] $end
+$var reg 256 ) data_2 [255:0] $end
+$var reg 1 * data_write_copy_1 $end
+$var reg 1 + data_write_copy_2 $end
+$scope module host_mux $end
+$var wire 8 , BANK_1 [7:0] $end
+$var wire 8 - BANK_2 [7:0] $end
+$var wire 1 & CLK $end
+$var wire 1 ' CLK_1kHz $end
+$var wire 256 . DATA_1 [255:0] $end
+$var wire 256 / DATA_2 [255:0] $end
+$var wire 1 * DATA_WRITE_COPY_1 $end
+$var wire 1 + DATA_WRITE_COPY_2 $end
+$var wire 1 0 clk_1kHz_fe $end
+$var wire 1 1 clk_1kHz_re $end
+$var wire 1 2 copy_1_fe $end
+$var wire 1 3 copy_1_re $end
+$var wire 1 4 copy_2_fe $end
+$var wire 1 5 copy_2_re $end
+$var reg 8 6 BANK [7:0] $end
+$var reg 256 7 DATA [255:0] $end
+$var reg 1 ! DATA_WRITE_COPY $end
+$var reg 16 8 counter [15:0] $end
+$var reg 1 9 hri1 $end
+$var reg 1 : hri2 $end
+$var reg 1 ; hri3 $end
+$var reg 1 < hri4 $end
+$var reg 1 = hri5 $end
+$var reg 1 > hri6 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0>
+1=
+0<
+0;
+0:
+09
+b0 8
+b0 7
+b0 6
+05
+04
+03
+02
+11
+00
+b0 /
+b0 .
+b0 -
+b0 ,
+0+
+0*
+b0 )
+b0 (
+1'
+1&
+b0 %
+b0 $
+b0 #
+b0 "
+0!
+$end
+#10
+0&
+#20
+01
+15
+1>
+1;
+1&
+1+
+#30
+0&
+#40
+14
+05
+b1111101000 8
+1<
+0;
+1&
+0+
+#50
+0&
+#60
+04
+1!
+0<
+1&
+#70
+0&
+#80
+0!
+1&
+#90
+0&
+#100
+10
+0=
+1&
+0'
+#110
+0&
+#120
+00
+0>
+b1 (
+b1 .
+1&
+b1 $
+b1 ,
+#130
+0&
+#140
+13
+19
+1&
+1*
+#150
+0&
+#160
+12
+03
+1:
+09
+1&
+0*
+#170
+0&
+#180
+02
+0:
+1&
+#190
+0&
+#200
+11
+1=
+1&
+1'
+#210
+0&
+#220
+01
+b1111100111 8
+1>
+1&
+#230
+0&
+#240
+b10 )
+b10 /
+1&
+b10 %
+b10 -
+#250
+0&
+#260
+15
+1;
+1&
+1+
+#270
+0&
+#280
+14
+05
+b10 #
+b10 6
+b10 "
+b10 7
+b1111101000 8
+1<
+0;
+1&
+0+
+#290
+0&
+#300
+10
+04
+1!
+0=
+0<
+1&
+0'
+#310
+0&
+#320
+00
+0!
+0>
+1&
+#330
+0&
+#340
+1&
+#350
+0&
+#360
+1&
+#370
+0&
+#380
+1&
+#390
+0&
+#400
+11
+1=
+1&
+1'
+#410
+0&
+#420
+01
+b1111100111 8
+1>
+1&
+#430
+0&
+#440
+1&
+#450
+0&
+#460
+1&
+#470
+0&
+#480
+1&

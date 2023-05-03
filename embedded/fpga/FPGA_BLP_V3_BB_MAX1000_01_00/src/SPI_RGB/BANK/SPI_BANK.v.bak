@@ -1,0 +1,78 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+module SPI_BANK_IN(
+	input CLK,
+	input READ,
+	input [7:0] BANK,
+	input [255:0] DATA_00,
+	input [255:0] DATA_01,
+	input [255:0] DATA_02,
+	input [255:0] DATA_03,
+	output reg [255:0] DATA
+	);
+	//
+	initial
+	begin
+		DATA <= 0;
+	end
+	//
+	always	@(posedge CLK)
+	begin
+	if (READ) 
+		begin
+		case(BANK[7:0])
+			00: DATA <= DATA_00;
+			01: DATA <= DATA_01;
+			02: DATA <= DATA_02;
+			03: DATA <= DATA_03;
+			///default: DATA <= DATA_0;
+			endcase
+		end
+	end
+endmodule
+////////////////////////////////////////////////////////////////////////////////////////////
+module SPI_BANK_OUT(
+	input CLK,
+	input COPY,
+	input [7:0] BANK,
+	input [255:0] DATA,
+	output reg [255:0] DATA_00,
+	output reg [255:0] DATA_01,
+	output reg [255:0] DATA_02,
+	output reg [255:0] DATA_03,
+	output reg [255:0] DATA_04,
+	output reg [255:0] DATA_05,
+	output reg [255:0] DATA_06,
+	output reg [255:0] DATA_07
+	);
+	//
+	initial
+	begin
+		DATA_00 <= 0;
+		DATA_01 <= 0;
+		DATA_02 <= 0;
+		DATA_03 <= 0;
+		DATA_04 <= 0;
+		DATA_05 <= 0;
+		DATA_06 <= 0;
+		DATA_07 <= 0;
+	end
+	//
+	always	@(posedge CLK)
+	begin
+	if (COPY) 
+		begin
+		case(BANK[7:0])
+			00: DATA_00 <= DATA;
+			01: DATA_01 <= DATA;
+			02: DATA_02 <= DATA;
+			03: DATA_03 <= DATA;
+			04: DATA_04 <= DATA;
+			05: DATA_05 <= DATA;
+			06: DATA_06 <= DATA;
+			07: DATA_07 <= DATA;
+			//default: DATA_0 <= DATA;
+			endcase
+		end
+	end
+endmodule
+////////////////////////////////////////////////////////////////////////////////////////////

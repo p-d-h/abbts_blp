@@ -1,0 +1,35 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\SLP_DIT-SPS-Projekt\SLP_DIT-SPS-Projekt\03_Software\Quartus\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\ADC.qsys --block-symbol-file --output-directory=D:\SLP_DIT-SPS-Projekt\SLP_DIT-SPS-Projekt\03_Software\Quartus\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\src\INT_ADC --family="MAX 10" --part=10M08SAU169C8G
+Progress: Loading FPGA_MODUL_MAX1000_DEMO_SPI_01_00/ADC.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding modular_adc_0 [altera_modular_adc 17.1]
+Progress: Parameterizing module modular_adc_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\SLP_DIT-SPS-Projekt\SLP_DIT-SPS-Projekt\03_Software\Quartus\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\ADC.qsys --synthesis=VERILOG --output-directory=D:\SLP_DIT-SPS-Projekt\SLP_DIT-SPS-Projekt\03_Software\Quartus\FPGA_MODUL_MAX1000_DEMO_SPI_01_00\src\INT_ADC\synthesis --family="MAX 10" --part=10M08SAU169C8G
+Progress: Loading FPGA_MODUL_MAX1000_DEMO_SPI_01_00/ADC.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding modular_adc_0 [altera_modular_adc 17.1]
+Progress: Parameterizing module modular_adc_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: ADC: Generating ADC "ADC" for QUARTUS_SYNTH
+Info: modular_adc_0: "ADC" instantiated altera_modular_adc "modular_adc_0"
+Info: rst_controller: "ADC" instantiated altera_reset_controller "rst_controller"
+Info: control_internal: "modular_adc_0" instantiated altera_modular_adc_control "control_internal"
+Info: sequencer_internal: "modular_adc_0" instantiated altera_modular_adc_sequencer "sequencer_internal"
+Info: ADC: Done "ADC" with 5 modules, 15 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
