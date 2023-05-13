@@ -21,7 +21,9 @@ sphinx-rtd-theme==1.2.0
 sphinx-execute-code-python3 == 0.3  # https://github.com/jpsenior/sphinx-execute-code
 jinja2 == 3.1.2
 
-aesim.simba==2023.1.31
-bokeh==3.1.0
-xarray==2023.4.2
-control==0.9.3
+# aesim.simba==2023.1.31
+# bokeh==3.1.0
+# xarray==2023.4.2
+# control==0.9.3
+
+modbus-tk==1.1.3
