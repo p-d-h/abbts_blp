@@ -59,11 +59,9 @@ def dump_regs(port: str = 'COM3', baudrate: int = 115200, address: int = 1):
 def demo(port: str = 'COM3', baudrate: int = 115200, address: int= 1):
     r = Riden(port, baudrate, address)
     # r.set_light(3)
+    r.set_v_set(13.0)
+    r.set_i_set(5.0)
     r.set_output(False)
-    r.set_v_set(12.67)
-    r.set_i_set(2.0)
-
-    r.set_output(True)
     r.update()
 
     sleep(2)
@@ -77,7 +75,7 @@ def demo(port: str = 'COM3', baudrate: int = 115200, address: int= 1):
     print(f'{r.v_bat=}V')
     print(f'{r.is_bat_mode()=}')
 
-
+    r.serial.close()
 
 
 if __name__ == "__main__":

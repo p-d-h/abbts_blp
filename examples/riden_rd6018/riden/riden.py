@@ -28,6 +28,7 @@ class Riden:
     ):
         self.address = address
         self.serial = serial or Serial(port, baudrate)
+        print(self.serial)
         self.master = master or RtuMaster(self.serial)
 
         # Fixes "Response length is invalid 0" error
