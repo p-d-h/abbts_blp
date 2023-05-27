@@ -1,0 +1,6 @@
+Python OPCUA Bibliothek
+https://github.com/FreeOpcUa/opcua-client-gui
+https://github.com/FreeOpcUa/python-opcua
+
+UA-Expert Client
+https://www.unified-automation.com/downloads/opc-ua-clients/uaexpert.html
