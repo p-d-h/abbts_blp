@@ -1,0 +1,4 @@
+part 1: https://www.youtube.com/watch?v=v5kqeVm6eQA
+part 2: https://www.youtube.com/watch?v=_FkfWySJNIc
+
+pdf: https://www.plexim.com/sites/default/files/tutorials_categorized/plecs/xmlrpc_controller_design.pdf
