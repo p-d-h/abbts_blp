@@ -16,5 +16,3 @@ Moduldokumentation abbts-blp
 
 HTML online Renderer
 
-https://raw.githack.com/p-d-h/abbts_blp/main/docs/build/html/index.html
-

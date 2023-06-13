@@ -1,8 +1,0 @@
-Dokumentation
-https://simba.io/doc/
-
-Github
-https://github.com/aesim-tech/simba-python-examples
-
-pip Modul
-https://pypi.org/project/aesim.simba/

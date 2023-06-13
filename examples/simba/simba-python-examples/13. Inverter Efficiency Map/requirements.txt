@@ -1,5 +1,0 @@
-tqdm
-aesim.simba
-numpy
-matplotlib
-scipy

@@ -7,7 +7,7 @@ blue = [0, 0, 1]
 white = [1, 1, 1]
 colors = [red, green, blue, white]
 
-rgb = RgbFpga(port='COM17')
+rgb = RgbFpga(port='COM5')
 rgb.open()
 
 for i in range(0, 4, 1):

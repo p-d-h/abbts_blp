@@ -1,0 +1,7 @@
+https://www.adafruit.com/product/4471
+https://learn.adafruit.com/circuitpython-libraries-on-any-computer-with-mcp2221/pinout
+
+https://github.com/adafruit/Adafruit_Learning_System_Guides/blob/main/Jupyter_USB/MCP2221_Test.ipynb
+
+Demo mit LSM6DSOX
+https://github.com/adafruit/Adafruit_Learning_System_Guides/blob/main/Jupyter_USB/LSM6DSOX_Accel.ipynb

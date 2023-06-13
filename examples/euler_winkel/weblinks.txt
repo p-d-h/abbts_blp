@@ -1,0 +1,20 @@
+https://realpython.com/python-scipy-linalg/
+
+https://automaticaddison.com/how-to-find-denavit-hartenberg-parameter-tables/
+
+https://automaticaddison.com/the-ultimate-guide-to-inverse-kinematics-for-6dof-robot-arms/
+https://automaticaddison.com/coding-denavit-hartenberg-tables-using-python/
+
+Schönes 3D Beispiel mit QT5 und MPL 3D
+https://www.youtube.com/watch?v=Oncqqga7_qY
+https://github.com/myindrata/Denavit-Hartenberg-Forward-Kinematics
+
+https://de.wikipedia.org/wiki/Denavit-Hartenberg-Transformation
+https://www.youtube.com/watch?v=rA9tm0gTln8
+
+
+Quaternionen
+https://www.youtube.com/watch?v=9AakzE0ZLaQ&list=PLb0zKSynM2PCrgebQsfrzEsUIuA0I_wdG&index=24
+
+Drehungen
+https://www.youtube.com/watch?v=PDgG2Z6T1ho&list=PLb0zKSynM2PCrgebQsfrzEsUIuA0I_wdG&index=25

@@ -1,4 +1,0 @@
-tqdm
-aesim.simba >= 2022.12.05a1
-numpy
-matplotlib
