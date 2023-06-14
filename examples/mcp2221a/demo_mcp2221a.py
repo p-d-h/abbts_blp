@@ -6,3 +6,6 @@ os.environ["BLINKA_MCP2221"] = "1"
 
 # Attempt to import a CircuitPython Module
 import board
+
+
+from adafruit_lsm6ds.lsm6dsox import LSM6DSOX
