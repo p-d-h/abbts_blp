@@ -28,6 +28,7 @@ setup(
     ],
     packages=['abbts_blp'],
     # package_data={'': ['*.ini']},
+    include_package_data=True,
     python_requires='>=3.8',
     install_requires=[
         'pyserial >= 3.5',
