@@ -35,3 +35,14 @@ setup(
         'Pillow >= 9.3',
     ],
 )
+
+"""
+https://python-packaging.readthedocs.io/en/latest/command-line-scripts.html
+
+https://github.com/FreeOpcUa/opcua-modeler/blob/master/setup.py
+      entry_points={'console_scripts':
+                    ['opcua-modeler = uamodeler.uamodeler:main']
+                    }
+      )
+"""
+

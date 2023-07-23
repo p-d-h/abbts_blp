@@ -1,13 +1,9 @@
 # Set an Environment Variable so Adafruit Blinka knows we're using the MCP2221
 import os
-import sys
 os.environ["BLINKA_MCP2221"] = "1"
 import time
-
-# Import CircuitPython Libraries
 import board
 import busio
-import adafruit_lsm6ds
 from adafruit_lsm6ds.lsm6dsox import LSM6DSOX
 
 i2c = busio.I2C(board.SCL, board.SDA)

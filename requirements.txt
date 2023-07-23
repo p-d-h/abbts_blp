@@ -34,4 +34,4 @@ adafruit-blinka==8.19.0
 adafruit-circuitpython-lsm6ds==4.5.10
 hidapi==0.14.0
 
-
+# opcua-modeler==0.5.14

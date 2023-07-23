@@ -3,7 +3,7 @@ import time
 import numpy as np
 
 
-url = 'http://127.0.0.1:8081'
+url = 'http://127.0.0.1:8080'
 url_base = url + "/document/Vektoren/NP/ios/w/"
 
 
@@ -80,11 +80,11 @@ def deg2rad(deg):
 if __name__ == '__main__':
 
     v50_position = np.array([0.0, 0.0, 0.0])
-    v50_angle = np.array([deg2rad(0.0), deg2rad(45.0), deg2rad(45.0)])
+    v50_angle = np.array([deg2rad(0.0), deg2rad(20.0), deg2rad(7.0)])
     v100_position = np.array([0.0, 0.0, 0.0])
-    v100_angle = np.array([0.0, 0.0, 0.0])
+    v100_angle = np.array([deg2rad(0.0), deg2rad(-45.0), deg2rad(-45.0)])
     v150_position = np.array([0.0, 0.0, 0.0])
-    v150_angle = np.array([0.0, 0.0, 0.0])
+    v150_angle = np.array([deg2rad(0.0), deg2rad(0.0), deg2rad(20.0)])
     put_state('run')
     put_values('v50', v50_position, v50_angle)
     put_values('v100', v100_position, v100_angle)
