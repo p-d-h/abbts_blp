@@ -1,7 +1,7 @@
 # C:\Users\PascalHelfenstein\Documents\Plexim\PLECS 4.7 (64 bit)\demos\buck_converter_with_parameter_sweep
 
 import xmlrpc.client
-import jsonrpc_requests		# for JSON-RPC
+# import jsonrpc_requests		# for JSON-RPC
 import os
 
 
@@ -10,11 +10,12 @@ MODEL_NAME  = "buck_converter_with_parameter_sweep"
 METHOD			= "XML"				# "XML", "JSON"
 
 # import RPC module
-if METHOD == "JSON":
-    server = jsonrpc_requests.Server(HOST_ADDRESS)
+# if METHOD == "JSON":
+#     server = jsonrpc_requests.Server(HOST_ADDRESS)
 
-elif METHOD == "XML":
-    server = xmlrpc.client.Server(HOST_ADDRESS)
+# elif METHOD == "XML":
+#     server = xmlrpc.client.Server(HOST_ADDRESS)
+server = xmlrpc.client.Server(HOST_ADDRESS)
 
 L_values = [40, 60, 80, 100, 120, 140, 160, 180, 200, 220]
 
