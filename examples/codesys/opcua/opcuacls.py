@@ -1,3 +1,17 @@
+# Dokumentation
+# http://freeopcua.github.io/
+# https://github.com/FreeOpcUa/python-opcua
+
+# Minimalbeispiel abgeleitet von
+# https://github.com/FreeOpcUa/python-opcua/blob/master/examples/client-minimal.py
+
+# Benutzerverwaltung
+# https://stackoverflow.com/questions/75056713/connect-to-opcua-server-with-username-and-password
+
+# Codesys Zertifikat
+# https://content.helpme-codesys.com/en/CODESYS%20Communication/_cds_runtime_opc_ua_server.html
+# Installation CODESYS Security Agent via CODESYS Installer
+
 import sys
 
 from opcua import Client
